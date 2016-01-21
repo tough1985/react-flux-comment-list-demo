@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-
+import {Input, Glyphicon } from 'react-bootstrap';
+const userGlyphicon = <Glyphicon glyph="user" />;
 export default class CommentForm extends Component {
   //定义控件属性
   static propTypes = {
@@ -54,8 +55,9 @@ export default class CommentForm extends Component {
       <form className="comment-form" onSubmit={this.onSubmit.bind(this)} >
         <div>
           <label>Your name:</label>
-          <input type="text" value={this.state.author}
+          <Input className='comment-form-username' type="text" addonBefore={userGlyphicon} value={this.state.author}
             onChange={this.handleChange.bind(this)}/>
+
         </div>
         <div>
           <label>Your comment:</label>
